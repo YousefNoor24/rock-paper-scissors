@@ -11,6 +11,15 @@ function getComputerChoice() {
     }
 }
 
+function capitalizeFirstLetter(word) {
+
+    const firstLetter = word.charAt(0);
+    const firstLetterCap = firstLetter.toUpperCase();
+    const remainingLetters = word.slice(1).toLowerCase();
+    const capitalizedWord = firstLetterCap + remainingLetters;
+    return capitalizedWord;
+}
+
 function playRound(playerSelection, computerSelection) {
 
     const playerChoice = playerSelection.toLowerCase();
@@ -28,7 +37,7 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerChoice === "scissors" && computerSelection === "paper") {
         return "You Win! Scissors beats Paper."
     } else if (playerChoice === computerSelection) {
-        return "Its a Draw!"
+        return "Its a Draw!" 
     } else {
         return "Please choose Rock, Paper, or Scissors";
     }
