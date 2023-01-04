@@ -23,7 +23,7 @@ function capitalizeFirstLetter(word) {
 function playRound(playerSelection, computerSelection) {
 
     const playerChoice = playerSelection.toLowerCase();
-
+    
     if (playerChoice === "rock" && computerSelection === "paper") {
         return "You Lose! Paper beats Rock.";
     } else if (playerChoice === "rock" && computerSelection === "scissors") {
@@ -46,12 +46,14 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     
     let playerChoice = "";
-    const computerChoice = getComputerChoice();
+    let computerChoice = "";
 
     for (let i = 1; i <= 5; i++) {
         playerChoice = prompt("Type in Rock, Paper, or Scissors");
+        computerChoice = getComputerChoice();
         console.log("Round " + i + ": " + playRound(playerChoice, computerChoice));    
     }
+    console.log("Game Over");
 }
 
 game();
