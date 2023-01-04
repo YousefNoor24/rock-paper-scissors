@@ -34,6 +34,15 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+    
+    let playerChoice = "";
+    const computerChoice = getComputerChoice();
+
+    for (let i = 1; i <= 5; i++) {
+        playerChoice = prompt("Type in Rock, Paper, or Scissors")
+        console.log("Round " + i + ": " + playRound(playerChoice, computerChoice));    
+    }
+}
+
+game();
