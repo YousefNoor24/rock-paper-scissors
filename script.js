@@ -28,7 +28,7 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerChoice === "scissors" && computerSelection === "paper") {
         return "You Win! Scissors beats Paper."
     } else if (playerChoice === computerSelection) {
-        return "Draw!"
+        return "Its a Draw!"
     } else {
         return "Please choose Rock, Paper, or Scissors";
     }
