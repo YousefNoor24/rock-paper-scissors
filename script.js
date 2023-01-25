@@ -1,4 +1,7 @@
-const choice = document.getElementById('playerSelection').querySelectorAll('button');
+const choice = document.getElementById('player-selection').querySelectorAll('button');
+const playerScore = document.getElementById('player-score');
+const computerScore = document.getElementById('computer-score');
+const announcer = document.getElementById('announcer');
 
 choice.forEach((button) => {
 
@@ -61,7 +64,7 @@ function game() {
     choice.forEach((button) => {
 
         button.addEventListener('click', () => {
-          playerChoice = button.id;
+          playerChoice = button.value;
           computerChoice = getComputerChoice();
           console.log(playRound(playerChoice, computerChoice));
         });
