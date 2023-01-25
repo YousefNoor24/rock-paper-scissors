@@ -1,3 +1,12 @@
+const choice = document.getElementById('playerSelection').querySelectorAll('button');
+
+choice.forEach((button) => {
+
+    button.addEventListener('click', () => {
+      button.id;
+    });
+});
+
 function getComputerChoice() {
 
     const computerChoice = Math.floor(Math.random() * 3) + 1;
@@ -10,6 +19,7 @@ function getComputerChoice() {
         return "scissors";
     }
 }
+
 
 function capitalizeFirstLetter(word) {
 
@@ -47,13 +57,22 @@ function game() {
     
     let playerChoice = "";
     let computerChoice = "";
+    
+    choice.forEach((button) => {
 
-    for (let i = 1; i <= 5; i++) {
-        playerChoice = prompt("Type in Rock, Paper, or Scissors");
-        computerChoice = getComputerChoice();
-        console.log("Round " + i + ": " + playRound(playerChoice, computerChoice));    
-    }
-    console.log("Game Over");
+        button.addEventListener('click', () => {
+          playerChoice = button.id;
+          computerChoice = getComputerChoice();
+          console.log(playRound(playerChoice, computerChoice));
+        });
+    });
+//    for (let i = 1; i <= 5; i++) {
+//        //playerChoice = prompt("Type in Rock, Paper, or Scissors");
+//        computerChoice = getComputerChoice();
+//        console.log("Round " + i + ": " + playRound(playerChoice, computerChoice));    
+//    }
+//    console.log("Game Over");
+    
 }
 
 game();
