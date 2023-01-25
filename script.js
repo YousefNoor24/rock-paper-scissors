@@ -3,12 +3,14 @@ const playerScore = document.getElementById('player-score');
 const computerScore = document.getElementById('computer-score');
 const announcer = document.getElementById('announcer');
 
+
 choice.forEach((button) => {
 
     button.addEventListener('click', () => {
       button.id;
     });
 });
+
 
 function getComputerChoice() {
 
@@ -38,35 +40,37 @@ function playRound(playerSelection, computerSelection) {
     const playerChoice = playerSelection.toLowerCase();
     
     if (playerChoice === "rock" && computerSelection === "paper") {
-        return "You Lose! Paper beats Rock.";
+        announcer.innerHTML = "You Lose! Paper beats Rock.";
     } else if (playerChoice === "rock" && computerSelection === "scissors") {
-        return "You Win! Rock beats Scissors.";
+        announcer.innerHTML =  "You Win! Rock beats Scissors.";
     } else if (playerChoice === "paper" && computerSelection === "scissors") {
-        return "You Lose! Scissors beat Paper.";
+        announcer.innerHTML =  "You Lose! Scissors beat Paper.";
     } else if (playerChoice === "paper" && computerSelection === "rock") {
-        return "You Win! Paper beats Rock.";
+        announcer.innerHTML =  "You Win! Paper beats Rock.";
     } else if (playerChoice === "scissors" && computerSelection === "rock") {
-        return "You Lose! Rock beats Scissors.";
+        announcer.innerHTML =  "You Lose! Rock beats Scissors.";
     } else if (playerChoice === "scissors" && computerSelection === "paper") {
-        return "You Win! Scissors beats Paper.";
+        announcer.innerHTML =  "You Win! Scissors beats Paper.";
     } else if (playerChoice === computerSelection) {
-        return "Its a Draw! " + capitalizeFirstLetter(playerChoice) + " is equal to " + capitalizeFirstLetter(computerSelection); 
-    } else {
-        return "Please choose Rock, Paper, or Scissors";
+        announcer.innerHTML =  "Its a Draw! " + capitalizeFirstLetter(playerChoice) + " is equal to " + capitalizeFirstLetter(computerSelection); 
     }
+    
 }
 
 function game() {
     
     let playerChoice = "";
     let computerChoice = "";
+    let playerPoints = 0;
+    let computerPoints = 0;
     
     choice.forEach((button) => {
 
         button.addEventListener('click', () => {
           playerChoice = button.value;
           computerChoice = getComputerChoice();
-          console.log(playRound(playerChoice, computerChoice));
+          playRound(playerChoice, computerChoice)
+          
         });
     });
 //    for (let i = 1; i <= 5; i++) {
