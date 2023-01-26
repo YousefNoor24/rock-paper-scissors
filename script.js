@@ -92,8 +92,10 @@ function game() {
         } else {
             if (playerPoints > computerPoints) {
                 announcer.innerHTML = "Game Over! Player Wins!"; 
-            } else {
+            } else if (playerPoints < computerPoints) {
                 announcer.innerHTML = "Game Over! Computer Wins!";
+            } else {
+                announcer.innerHTML = "It's a Draw!!!"
             }
         }});
     });
