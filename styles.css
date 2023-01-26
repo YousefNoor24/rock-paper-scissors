@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0D0D0D;
+    color: #F2EFEB;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 50px;
+}
+
+#result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-board {
+    font-size: 35px;
+}
+
+.info {
+    font-size: 25px;
+}
+
+.info-score {
+    font-size: 20px;
+}
+
+button {
+    font-size: 30px;
+    border-radius: 5px;
+    background-color: #3D403A;
+    color: #F2EFEB;
+}
