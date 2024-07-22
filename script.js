@@ -27,4 +27,34 @@ function getHumanChoice(){
     }
 }
 
-console.log(getHumanChoice());
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === "Rock" && computerChoice === "Paper") {
+        computerScore++;
+        return "You lose! Rock lose to paper.";
+    } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
+        humanScore++;
+        return "You win! Rock beats scissors.";
+    } else if (humanChoice === "Paper" && computerChoice === "Rock") {
+        humanScore++;
+        return "You win! Paper beats rock.";
+    } else if (humanChoice === "Paper" && computerChoice === "Scissors") {
+        computerScore++;
+        return "You lose! Paper lose to scissors.";
+    } else if (humanChoice === "Scissors" && computerChoice === "Rock") {
+        computerScore++;
+        return "You lose! Scissors lose to rock.";
+    } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
+        humanScore++;
+        return "You win! Scissors beat paper."
+    } else {
+        return "Tie! " + humanChoice + " is equal to " + computerChoice;
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log(playRound(humanSelection, computerSelection));
+console.log(`Human: ${humanScore}, Computer: ${computerScore}`);
+
+ 
