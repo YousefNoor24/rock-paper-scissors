@@ -14,17 +14,24 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    let humanChoice = prompt("Please choose between Rock ('R' or 'r'), Paper ('P' or 'p'), or Scissors ('S' or 's').");
+    const rockBtn = document.querySelector("#rock");
+    const paperBtn = document.querySelector("#paper");
+    const scissorsBtn = document.querySelector("#scissors");
 
-    if (humanChoice === 'R' || humanChoice === 'r') {
+    rockBtn.addEventListener("click", () => {
+        console.log("Rock button is clicked.");
         return "Rock";
-    } else if (humanChoice === 'P' || humanChoice === 'p') {
+    });
+
+    paperBtn.addEventListener("click", () => {
+        console.log("Paper button is clicked.");
         return "Paper";
-    } else if (humanChoice === 'S' || humanChoice === 's') {
+    });
+
+    scissorsBtn.addEventListener("click", () => {
+        console.log("Scissors button is clicked.");
         return "Scissors";
-    } else {
-        humanChoice = prompt("Please choose a vaild choice between Rock ('R' or 'r'), Paper ('P' or 'p'), or Scissors ('S' or 's').");
-    }
+    });
 }
 
 function playRound(humanChoice, computerChoice) {
@@ -53,8 +60,8 @@ function playRound(humanChoice, computerChoice) {
 
 
 function playGame() {
-
+    
     
 }
  
-playGame();
+getHumanChoice();
